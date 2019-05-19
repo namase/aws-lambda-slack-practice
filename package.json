@@ -1,0 +1,25 @@
+{
+  "name": "aws-lambda-slack-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "NODE_ENV=development webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.25",
+    "@types/glob": "^7.1.1",
+    "@types/node": "^12.0.2",
+    "@types/webpack": "^4.4.31",
+    "awesome-typescript-loader": "^5.2.1",
+    "aws-sdk": "^2.458.0",
+    "glob": "^7.1.4",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
