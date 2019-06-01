@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Post message to Slack'
+Resources:
+  HelloSAM:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../../built/dev_practice
+      Handler: index.handler
+      Runtime: nodejs8.10
+      Environment:
+        Variables:
+          SLACK_TOKEN: !Ref SlackToken
+          SLACK_CHANEL: !Ref SlackChanel
+Parameters:
+  SlackToken:
+    Type: String
+  SlackChanel:
+    Type: String
