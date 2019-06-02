@@ -8,7 +8,7 @@ Resources:
   HelloSAM:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://slack-app-nlp-yo-yaku-kun/3d0a5ebef9625907c7a3f0e254c0e078
+      CodeUri: s3://slack-app-nlp-yo-yaku-kun/6c4fa0af4a0cefb5e44f6079bc3905e9
       Handler: index.handler
       Runtime: nodejs8.10
       Events:
