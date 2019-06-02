@@ -1,6 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: 'Post message to Slack'
+Globals:
+  Function:
+    Timeout: 30
+Description: 'Yo-Yaku kun api'
 Resources:
   HelloSAM:
     Type: AWS::Serverless::Function
@@ -8,6 +11,12 @@ Resources:
       CodeUri: ../../built/dev_practice
       Handler: index.handler
       Runtime: nodejs8.10
+      Events:
+        API:
+          Type: Api
+          Properties:
+            Path: /summarize
+            Method: post
       Environment:
         Variables:
           SLACK_TOKEN: !Ref SlackToken
