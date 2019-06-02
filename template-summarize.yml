@@ -3,12 +3,12 @@ Transform: AWS::Serverless-2016-10-31
 Globals:
   Function:
     Timeout: 30
-Description: Yo-Yaku kun api
+Description: Yo-yaku kun summarize
 Resources:
-  HelloSAM:
+  SUMMARIZE:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://slack-app-nlp-yo-yaku-kun/6c4fa0af4a0cefb5e44f6079bc3905e9
+      CodeUri: s3://slack-app-nlp-yo-yaku-kun-summmarize/e71b0cf61955f72ad2e9dcbaec821099
       Handler: index.handler
       Runtime: nodejs8.10
       Events:
@@ -17,14 +17,3 @@ Resources:
           Properties:
             Path: /summarize
             Method: post
-      Environment:
-        Variables:
-          SLACK_TOKEN:
-            Ref: SlackToken
-          SLACK_CHANEL:
-            Ref: SlackChanel
-Parameters:
-  SlackToken:
-    Type: String
-  SlackChanel:
-    Type: String

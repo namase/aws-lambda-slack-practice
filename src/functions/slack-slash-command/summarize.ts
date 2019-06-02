@@ -16,17 +16,15 @@ const handler = (event, context, callback) => {
     const { SLACK_TOKEN, SLACK_CHANEL } = process.env
     if (!SLACK_TOKEN || !SLACK_CHANEL) return callback(new Error('slack token or channel is undefined'))
 
-    // なにか非同期処理
-    (async () => {
-        const delay = (time) => { return new Promise((res) => { return setTimeout(() => { return res() }, time) }) };
-        await delay(15 * 1000);
-    })();
+        // なにか非同期処理
+        // (async () => {
+        //     const delay = (time) => { return new Promise((res) => { return setTimeout(() => { return res() }, time) }) };
+        //     await delay(15 * 1000);
+        // })();
 
     callback(null, {
         statusCode: '200',
     });
-
-    console.log('huga')
 }
 
 module.exports.handler = handler

@@ -3,12 +3,14 @@ Transform: AWS::Serverless-2016-10-31
 Globals:
   Function:
     Timeout: 30
-Description: 'Yo-Yaku kun api'
+Description: 'Yo-Yaku kun slash command'
 Resources:
-  HelloSAM:
+  # Lambda定義部分
+  LMBDA:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ../../built/dev_practice
+      Role: !GetAtt BillingIamRole.Arn
       Handler: index.handler
       Runtime: nodejs8.10
       Events:
@@ -21,6 +23,20 @@ Resources:
         Variables:
           SLACK_TOKEN: !Ref SlackToken
           SLACK_CHANEL: !Ref SlackChanel
+  # 別のLambda実行可能なIAMロール
+  BillingIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: "sts:AssumeRole"
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaRole
 Parameters:
   SlackToken:
     Type: String

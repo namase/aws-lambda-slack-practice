@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Globals:
+  Function:
+    Timeout: 30
+Description: Yo-Yaku kun slash command
+Resources:
+  LMBDA:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://slack-app-nlp-yo-yaku-kun/e71b0cf61955f72ad2e9dcbaec821099
+      Role:
+        Fn::GetAtt:
+        - BillingIamRole
+        - Arn
+      Handler: index.handler
+      Runtime: nodejs8.10
+      Events:
+        API:
+          Type: Api
+          Properties:
+            Path: /summarize
+            Method: post
+      Environment:
+        Variables:
+          SLACK_TOKEN:
+            Ref: SlackToken
+          SLACK_CHANEL:
+            Ref: SlackChanel
+  BillingIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaRole
+Parameters:
+  SlackToken:
+    Type: String
+  SlackChanel:
+    Type: String
