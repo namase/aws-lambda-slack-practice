@@ -6,7 +6,7 @@ Resources:
     Properties:
       LayerName: SharedLayer
       Description: kuromoji dictionary
-      ContentUri: 's3://slack-app-nlp-yo-yaku-kun-module/node_modules.zip'
+      ContentUri: 's3://slack-app-nlp-yo-yaku-kun-module/nodejs.zip'
       CompatibleRuntimes:
         - nodejs6.10
         - nodejs8.10

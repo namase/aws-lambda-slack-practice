@@ -6,7 +6,6 @@ var https = require('https');
 
 const handler = (event, context, callback) => {
 
-
     // 環境変数からTOKENと投稿チャンネルを取得
     const { SLACK_TOKEN, SLACK_CHANEL } = process.env
     if (!SLACK_TOKEN || !SLACK_CHANEL) return callback(new Error('slack token or channel is undefined'))
