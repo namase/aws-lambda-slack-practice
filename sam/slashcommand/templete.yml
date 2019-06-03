@@ -9,8 +9,8 @@ Resources:
   LMBDA:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ../../built/dev_practice
       Role: !GetAtt BillingIamRole.Arn
+      CodeUri: ../../built/dev_slackbot
       Handler: index.handler
       Runtime: nodejs8.10
       Events:

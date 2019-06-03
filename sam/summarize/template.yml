@@ -9,12 +9,8 @@ Resources:
   SUMMARIZE:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ../../built/dev_practice
+      CodeUri: ../../src/functions/summarize
       Handler: index.handler
       Runtime: nodejs8.10
-      Events:
-        API:
-          Type: Api
-          Properties:
-            Path: /summarize
-            Method: post
+      Layers:
+        - "arn:aws:lambda:ap-northeast-1:782623905234:layer:SharedLayer:1"

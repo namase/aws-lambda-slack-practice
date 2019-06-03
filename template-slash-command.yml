@@ -8,11 +8,11 @@ Resources:
   LMBDA:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://slack-app-nlp-yo-yaku-kun/e71b0cf61955f72ad2e9dcbaec821099
       Role:
         Fn::GetAtt:
         - BillingIamRole
         - Arn
+      CodeUri: s3://slack-app-nlp-yo-yaku-kun/855077d05688a60d5584b44d3fd0f9b1
       Handler: index.handler
       Runtime: nodejs8.10
       Events:
