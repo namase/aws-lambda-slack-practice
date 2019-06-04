@@ -8,7 +8,7 @@ Resources:
   SUMMARIZE:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://slack-app-nlp-yo-yaku-kun-summmarize/54bf364a960dac2fd0d31d09dfe90b26
+      CodeUri: s3://slack-app-nlp-yo-yaku-kun-summmarize/5abfecd35d29f71daa6b0e87256917a6
       Handler: index.handler
       Runtime: nodejs8.10
       Layers:

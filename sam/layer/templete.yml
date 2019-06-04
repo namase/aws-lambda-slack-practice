@@ -8,7 +8,6 @@ Resources:
       Description: kuromoji dictionary
       ContentUri: 's3://slack-app-nlp-yo-yaku-kun-module/nodejs.zip'
       CompatibleRuntimes:
-        - nodejs6.10
         - nodejs8.10
       LicenseInfo: 'Available under the MIT-0 license.'
 Outputs:

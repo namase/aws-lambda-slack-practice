@@ -9,7 +9,7 @@ Resources:
   SUMMARIZE:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ../../src/functions/summarize
+      CodeUri: ../../built/dev_summarize/
       Handler: index.handler
       Runtime: nodejs8.10
       Layers:
