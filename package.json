@@ -18,7 +18,7 @@
     "@types/request": "^2.48.1",
     "@types/webpack": "^4.4.31",
     "awesome-typescript-loader": "^5.2.1",
-    "aws-lambda": "^0.1.2",
+    "aws-lambda": "^1.0.5",
     "aws-sdk": "^2.466.0",
     "glob": "^7.1.4",
     "ts-loader": "^6.0.1",
